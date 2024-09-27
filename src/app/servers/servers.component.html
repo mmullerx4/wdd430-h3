@@ -1,3 +1,19 @@
+<!-- <label>Server Name</label>
+<input type="text"  class="form-control" (input)="onUpdateServerName($event)"> -->
+<!-- $event is a reserved variable name for event binding and use for grabbing data -->
+<label>Server Name</label>
+<input type="text"  class="form-control" [(ngModel)]="serverName"> <!-- for two way binding, we combine property and event binding using a directive. It triggers on input event & updates value of serverName. It will also update if we change the serverName somewhere else >two way binding. Reacting to events in both directions. -->
+
+<!-- <p> {{ serverName }}</p>-->
+
+
+<button class="btn btn-primary" [disabled]="!allowNewServer"(click)="onCreateServer()"> Add Server</button> <!--property bind disabled to typescript property below by enclosing in square brackets to tell Angular to make dynamic-- property name allowNewServer--> <!--HTML binding with brackets to allow... & "event binding" with parentheis & click ^^ Can also bind to directives and components-->
+
+
+
+<!-- <p> {{ allowNewServer }}</p> <This is string interpolation OR property binding below VV-->
+<!-- <p [innerText]="allowNewServer"></p> -->
+<p> {{ serverCreationStatus }}</p>
 <app-server></app-server>
 <app-server></app-server>
 
