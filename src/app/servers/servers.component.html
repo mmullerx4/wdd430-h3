@@ -7,7 +7,7 @@
 <!-- <p> {{ serverName }}</p>-->
 
 
-<button class="btn btn-primary" [disabled]="!allowNewServer"(click)="onCreateServer()"> Add Server</button> <!--property bind disabled to typescript property below by enclosing in square brackets to tell Angular to make dynamic-- property name allowNewServer--> <!--HTML binding with brackets to allow... & "event binding" with parentheis & click ^^ Can also bind to directives and components-->
+<button class="btn btn-primary" [disabled]="!allowNewServer"(click)="onCreateServer()"> Add Server</button> <!--property bind "disabled" to typescript property below by enclosing in square brackets to tell Angular to make dynamic-- property name allowNewServer--> <!--HTML binding with brackets to allow... & "event binding" with parenthesis & click ^^ Can also bind to directives and components-->
 
 
 
@@ -19,6 +19,7 @@
  <ng-template #noServer><p>No server was created.</p></ng-template> -->
 
  <p *ngIf="serverCreated">Server was created, server name is {{ serverName }}</p>
-<app-server></app-server>
-<app-server></app-server>
+ <app-server *ngFor="let server of servers"></app-server> <!-- servers property setup in typescript file. This loop through all the elements in array and assign element to server variable -->
+<!-- <app-server></app-server> -->
+
 
