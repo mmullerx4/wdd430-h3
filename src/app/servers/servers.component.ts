@@ -13,7 +13,9 @@ export class ServersComponent implements OnInit {
   allowNewUser = false;
   serverCreationStatus = 'No server was created!';
   serverName = 'Testserver';
-  
+  serverCreated = false;
+
+
 
   constructor() {  //method that executed at time created by Angular
     setTimeout(() => {  //arguments with function body
@@ -25,6 +27,7 @@ export class ServersComponent implements OnInit {
 
   }
   onCreateServer() {
+    this.serverCreated = true;
     this.serverCreationStatus = 'Server was created! Name is ' + this.serverName;
   }
 
